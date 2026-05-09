@@ -1,0 +1,24 @@
+*{
+    --spacing: 0.0625rem;
+}
+
+@theme{
+    --color-bg-light: hsl(208, 100%, 95%);
+    --color-header-light: aliceblue;
+    --color-header-border-light: lightsteelblue;
+    --color-element-light: aliceblue;
+    --color-element-border-light: cornflowerblue;
+    --color-element-active-light: hsl(197, 71%, 85%);
+    --color-element-border-active-light: navy;
+    --color-text-light: hsl(240, 100%, 10%);
+    
+    --color-bg-dark: hsl(208, 100%, 5%);
+    --color-header-dark: hsl(208, 100%, 3%);
+    --color-header-border-dark: hsl(214, 41%, 22%);
+    --color-element-dark: hsl(208, 100%, 3%);
+    --color-element-border-dark: hsl(219, 79%, 34%);
+    --color-element-active-dark: hsl(197, 71%, 15%);
+    --color-element-border-active-dark: hsl(240, 100%, 75%);
+    --color-text-dark: hsl(227, 100%, 90%);
+}
+@import "tailwindcss"
