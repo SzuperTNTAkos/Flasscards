@@ -4,10 +4,12 @@ type Props = {
   onDone: Function
   currenName: string
   updateCurrentName: Function
+  doFocus: boolean
 }
 
 export default function GiveName({onDone, currenName, updateCurrentName}: Props) {
   const [textboxVal, updateTextboxVal] = useState(currenName)
+  const [InvalidNameError, showErrorInvalidName] = useState(false)
   const nameTextboxRef = useRef<HTMLInputElement>(null)
   const isValidName = (value: string) => {
     return !/^\s+$|^$/.test(value)
@@ -18,7 +20,7 @@ export default function GiveName({onDone, currenName, updateCurrentName}: Props)
       updateCurrentName(textboxVal)
     }
     else {
-      alert('Invalid name for your set')
+      showErrorInvalidName(true)
       nameTextboxRef.current?.focus()
     }
   }
@@ -28,9 +30,12 @@ export default function GiveName({onDone, currenName, updateCurrentName}: Props)
     }
   }
   return (
-    <div className="flex h-50 mx-[20%]">
-      <input ref={nameTextboxRef} type="text" placeholder="Enter a name for this set..." defaultValue={currenName} onChange={(textbox) => updateTextboxVal(textbox.target.value)} onKeyDown={(key) => handleKeyDown(key)} className="not-dark:bg-element-light dark:bg-element-dark border-3 rounded-xl not-dark:border-element-border-light dark:border-element-border-dark items-center w-full h-fill pl-10 border-solid outline-none not-dark:text-text-light dark:text-text-dark focus:not-dark:border-element-border-active-light focus:dark:border-element-border-active-dark"/>
-      <button onClick={buttonClicked} className="ml-5 h-fill w-fit flex items-center px-10 rounded-xl not-dark:bg-element-light dark:bg-element-dark not-dark:border-element-border-light dark:border-element-border-dark border-3 hover:not-dark:border-element-border-active-light hover:dark:border-element-border-active-dark active:not-dark:bg-element-active-light active:dark:bg-element-active-dark not-dark:text-text-light dark:text-text-dark">Done</button>
+    <div className="mx-[20%]">
+      <div className="flex h-50">
+        <input ref={nameTextboxRef} type="text" placeholder="Enter a name for this set..." defaultValue={currenName} onChange={(textbox) => updateTextboxVal(textbox.target.value)} onKeyDown={(key) => handleKeyDown(key)} className="bg-element border-3 rounded-xl border-element-border items-center w-full h-fill pl-10 border-solid outline-none text-text focus:border-element-border-active"/>
+        <button onClick={buttonClicked} className="ml-5 h-fill w-fit flex items-center px-10 rounded-xl bg-element border-element-border border-3 hover:border-element-border-active active:bg-element-active text-text">Done</button>
+      </div>
+      <div className={`text-error ${InvalidNameError ? '' : 'hidden' }`}>Invalid name for your set!</div>
     </div>
   )
 }

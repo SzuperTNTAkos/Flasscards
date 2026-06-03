@@ -10,9 +10,10 @@ export default function Home() {
         <NavButton className='mr-0' name='Import from quizlet' to='/import' />
       </nav>
       <div className='mt-12 flex items-center h-50'>
-        <h2 className='pr-15 not-dark:text-text-light dark:text-text-dark text-2xl font-bold'>History:</h2>
+        <h2 className='pr-15 text-text text-2xl font-bold'>History:</h2>
         <SearchBar />
       </div>
     </div>
   )
 }
+

@@ -1,24 +1,37 @@
 *{
     --spacing: 0.0625rem;
+    --color-bg-light: hsl(208, 100%, 95%);
+    --color-header-light: hsl(208, 100%, 97%);
+    --color-header-border-light: hsl(214, 41%, 78%);
+    --color-element-light: hsl(208, 100%, 97%);
+    --color-element-border-light: hsl(219, 79%, 66%);
+    --color-element-active-light: hsl(197, 71%, 85%);
+    --color-element-border-active-light: hsl(240, 100%, 25%);
+    --color-text-light: hsl(240, 100%, 10%);
+    --color-error-light: red;
+    
+    --color-bg-dark: #000e1a;
+    --color-header-dark: #00080f;
+    --color-header-border-dark: #21354f;
+    --color-element-dark: #00080f;
+    --color-element-border-dark: #12429b;
+    --color-element-active-dark: #0b3241;
+    --color-element-border-active-dark: #8080ff;
+    --color-text-dark: #ccd7ff;
+    --color-error-dark: #ff6347;
+
 }
 
 @theme{
-    --color-bg-light: hsl(208, 100%, 95%);
-    --color-header-light: aliceblue;
-    --color-header-border-light: lightsteelblue;
-    --color-element-light: aliceblue;
-    --color-element-border-light: cornflowerblue;
-    --color-element-active-light: hsl(197, 71%, 85%);
-    --color-element-border-active-light: navy;
-    --color-text-light: hsl(240, 100%, 10%);
-    
-    --color-bg-dark: hsl(208, 100%, 5%);
-    --color-header-dark: hsl(208, 100%, 3%);
-    --color-header-border-dark: hsl(214, 41%, 22%);
-    --color-element-dark: hsl(208, 100%, 3%);
-    --color-element-border-dark: hsl(219, 79%, 34%);
-    --color-element-active-dark: hsl(197, 71%, 15%);
-    --color-element-border-active-dark: hsl(240, 100%, 75%);
-    --color-text-dark: hsl(227, 100%, 90%);
+    --spacing: 0.0625rem;
+    --color-bg: #e5f3ff;
+    --color-header: #f0f8ff;
+    --color-header-border: #b0c4de;
+    --color-element: #f0f8ff;
+    --color-element-border: #6494ed;
+    --color-element-active: #bee5f4;
+    --color-element-border-active: #000080;
+    --color-text: #000033;
+    --color-error: #ff0000;
 }
-@import "tailwindcss"
+@import "tailwindcss";
